@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ความรู้เกี่ยวกับอาหารและโภชนาการ</title>
+<style>
+    body{
+    background-color: rgb(255, 255, 255);
+    }
+.logo{
+    background-color: rgb(222, 247, 36);
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 10px;
+}
+.logo h1{
+    margin-left: 35px;
+}
+.logo img{
+    border-radius: 50%;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    background-color: #e6d065;
+    justify-content: center;
+}
+nav ul li {
+    position: relative;
+    width: 250px;
+}
+nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    color: rgb(8, 8, 8);
+}
+nav ul li a:hover {
+    background-color: #e4e13a;
+}
+nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #eff154;
+    display: none;
+    list-style: none;
+}
+nav ul li:hover ul {
+    display: block;
+}
+nav ul li ul li a {
+    padding: 10px 15px;
+}
+section{
+    margin-top: 10px;
+    margin-left: 25px;
+    padding: 50px;
+    display: flex;
+}
+
+.slider {
+    margin: 0 auto;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+    width: 800px;
+    height: 550px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+    display: flex;
+    width: 300%; /* รวมความกว้างของทุกสไลด์ */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%; /* ความกว้างของแต่ละสไลด์ */
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 800px;
+    height: 550px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* การควบคุมด้วย Radio Button */
+input[type="radio"] {
+    display: none;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0); /* เลื่อนสไลด์แรก */
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%); /* เลื่อนสไลด์ที่สอง */
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%); /* เลื่อนสไลด์ที่สาม */
+}
+
+/* ปุ่มควบคุม */
+.controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.controls label {
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.controls label:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+input#slide1:checked ~ .controls label[for="slide1"],
+input#slide2:checked ~ .controls label[for="slide2"],
+input#slide3:checked ~ .controls label[for="slide3"] {
+    background: #007bff;
+}
+  .social-links {
+    list-style: none;
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+/* Footer Styles */
+.footer {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f39c12;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f39c12;
+}
+
+/* Make sure footer does not overlap content */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .footer h3 {
+    font-size: 20px;
+  }
+  .footer-links li {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+.sideba  {
+        width: 25%;
+        background-color: #ecf0f1;
+        padding: 20px;
+    }
+    .content {
+        width: 70%; }
+.con {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    footer {
+        background-color:  rgb(222, 247, 36);
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    h2 {
+        color: #2c3e50;
+    }
+  
+</style>
+</head>
+<body>
+    <header>
+    <div class="logo">
+    <img src="./img/4.png" alt="" width="150px">
+    <h1>ความรู้เกี่ยวกับอาหารและโภชนาการ</h1>  
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">หน้าหลัก</a>
+                <ul>
+                    <li><a href="./foofive.html" target="_blank">อาหาร 5 หมู่</a></li>
+                    <li><a href="./over.html" target="_blank">โภชการเกิน คืออะไรกันแน่</a></li>
+                    <li><a href="./Malnu.html" target="_blank">โภชการขาด คืออะไรกันแน่</a></li>
+                </ul>
+            </li>
+            <li><a href="#">อาหารที่เหมาะสม</a>
+                <ul>
+                    <li><a href="./hatyfood.html" target="_blank">สำหรับเด็ก</a></li>
+                    <li><a href="./Cooking.html" target="_blank">สำหรับวัยรุ่น</a></li>
+                    <li><a href="./childfood1.html" target="_blank">สำหรับวัยทำงาน</a></li>
+                    <li><a href="./childfood1.html" target="_blank">สำหรับผู้สูงอายุ</a></li>
+                </ul>
+            </li>
+            <li><a href="#" target="_blank">สูตรอาหาร</a>
+                <ul>
+                    <li><a href="#">ลดน้ำหนัก</a></li>
+                    <li><a href="./Boost.html" target="_blank">เพิ่มกล้ามเนื้อ</a></li>
+                    <li><a href="./cal.html" target="_blank">เพิ่มพลังงาน</a></li>
+                </ul>
+            <li><a href="#" target="_blank">เคล็ดลับ</a>
+                <ul>
+                    <li><a href="#">เแผนมื้ออาหาร</a></li>
+                    <li><a href="./Boost.html" target="_blank"> การทำIF</a></li>
+                    <li><a href="./cal.html" target="_blank">การคำนวณแคล</a></li>
+                    <li><a href="./Boost.html" target="_blank">การออกกำลังกาย</a></li>
+                    <li><a href="./Boost.html" target="_blank">คำนวณ</a></li>
+                </ul>
+            </li>
+            <li><a href="#">เมนูดีๆ</a></li>
+    </nav>
+     <img src="./img/food3.png" width="1500" height="600">
+    </header>
+    <section>
+    <div class="slider">
+            <div class="slides">
+             <div class="slide">
+              <img src="./img/1.png" alt="Slide 1">
+             </div>
+             <div class="slide">
+              <img src="./img/2.png" alt="Slide 2">
+             </div>
+             <div class="slide">
+              <img src="./img/3.png" alt="Slide 3">
+             </div>
+            </div>
+            <div class="controls"> <button class="control prev">❮</button> <button class="control next">❯</button>
+            </div>
+            <div class="indicators">
+             <div class="indicator" data-index="0"></div>
+             <div class="indicator" data-index="1"></div>
+             <div class="indicator" data-index="2"></div>
+            </div>
+           </div>
+           <script>
+                 const slides = document.querySelector('.slides');
+                 const slide = document.querySelectorAll('.slide');
+                 const prevBtn = document.querySelector('.prev');
+                 const nextBtn = document.querySelector('.next');
+                 const indicators = document.querySelectorAll('.indicator');
+                 let currentIndex = 0;
+         
+                 function updateSlider() {
+                     slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+                     indicators.forEach((indicator, index) => {
+                         indicator.classList.toggle('active', index === currentIndex);
+                     });
+                 }
+         
+                 prevBtn.addEventListener('click', () => {
+                     currentIndex = (currentIndex > 0) ? currentIndex - 1 : slide.length - 1;
+                     updateSlider();
+                 });
+         
+                 nextBtn.addEventListener('click', () => {
+                     currentIndex = (currentIndex < slide.length - 1) ? currentIndex + 1 : 0;
+                     updateSlider();
+                 });
+         
+                 indicators.forEach(indicator => {
+                     indicator.addEventListener('click', (e) => {
+                         currentIndex = parseInt(e.target.getAttribute('data-index'));
+                         updateSlider();
+                     });
+                 });
+         
+                 updateSlider();
+             </script>
+</div>
+<div class="con">
+    <h1>แหล่งรวมบทความ</h1>
+</div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+          <h3>ช่องทางติดต่อ</h3>
+          <div class="footer-links">
+            <ul>
+              <li><a href="#">เกี่ยวกับทีม</a></li>
+              <li><a href="#">ทีมงาน</a></li>
+              <li><a href="#">วิสัยทัศน์และเป้าหมาย</a></li>
+              <li><a href="#">ช่องทางติดต่อ</a></li>
+              <li><a href="#">แบบสอบถาม</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      
+</body>
+</html>
